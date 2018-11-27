@@ -6,4 +6,5 @@
 3. virtualenv env
 4. ./env/Scripts/activate
 5. pip -I stable-req.txt
-6. python3 run.py
+6. export FLASK_APP=run.py
+7. flask run
