@@ -3,11 +3,11 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def home():
 	return 'Hello, World!'
 
 @app.route('/scrape', methods=['POST'])
-def login():
+def scrape():
 	if request.method == 'POST':
 		from scraper import Scraper
 		scraper = Scraper(request.form['address'])
