@@ -1,14 +1,14 @@
 import re
 import requests
 
-from detection import Detection
-
 # Scraper Class
 # Grabs content from the web
 # Returns a list of all the URLs
 class Scraper(object):
 	List = []
 
+	# Initalize with a web address
+	# <parameter="address"> accessable url string</parameter>
 	def __init__(self, address):
 		self.address = address
 		self._get(address)
@@ -19,7 +19,10 @@ class Scraper(object):
 		self.ListURLs(self.request.text)
 
 	# scrapes data for a regex
+	# <parameter="content">content to search for URL's, stores it in scraperObject.List</parameter>
 	def ListURLs(self, content):
+		# https://gist.github.com/gruber/249502
 		pattern = "(?i)\\b((?:[a-z][\\w-]+:(?:/{1,3}|[a-z0-9%])|www\\d{0,3}[.]|[a-z0-9.\\-]+[.][a-z]{2,4}/)(?:[^\\s()<>]+|\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\))+(?:\\(([^\\s()<>]+|(\\([^\\s()<>]+\\)))*\\)|[^\\s`!()\\[\\]{};:'\".,<>?«»“”‘’]))"
-		self.List = re.findall(pattern, content)
+		groups = re.findall(pattern, content)
+		self.List = [item[0] for item in groups]
 
