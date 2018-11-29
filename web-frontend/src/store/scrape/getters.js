@@ -1,4 +1,4 @@
-/*
-export function someGetter (state) {
+
+export function scans (state) {
+  return state.scans
 }
-*/
