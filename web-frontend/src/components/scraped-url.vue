@@ -1,13 +1,14 @@
 <template>
-  <div>My component</div>
+  <div>
+    <a :href="address">{{address}}</a>
+    Source:<a :href="source">go</a>
+  </div>
 </template>
 
 <script>
 export default {
   // name: 'ComponentName',
-  data () {
-    return {}
-  }
+  props: ['address', 'source']
 }
 </script>
 

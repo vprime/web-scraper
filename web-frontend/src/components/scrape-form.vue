@@ -1,26 +1,14 @@
 <template>
   <div>
-    <div>My component</div>
+    <div>Scrape a Page</div>
     <section class="main">
       <input v-model="url" placeholder="Scrape Url" v-on:keyup.enter="scanUrl($event)" />
-
-      <ul class="scrapes-list">
-        <li v-for="scrape in scans"
-          class="scrape"
-          :key="scrape.id">
-          <div class="view">
-            <span>Scan: {{scrape.source}}</span>
-            <label>{{scrape.status}}</label>
-            <p></p>
-          </div>
-        </li>
-      </ul>
     </section>
   </div>
 </template>
 
 <script>
-import { mapState, mapMutations, mapGetters } from 'vuex'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'ScrapeForm',
@@ -30,11 +18,6 @@ export default {
     }
   },
   created () {
-
-  },
-  computed: {
-    ...mapState('scrape', ['scrapes']),
-    ...mapGetters('scrape', ['scans'])
   },
   methods: {
     ...mapMutations('scrape', ['setUrl']),
