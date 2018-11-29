@@ -3,12 +3,15 @@
     <div>My component</div>
     <section class="main">
       <input v-model="url" placeholder="Scrape Url" v-on:keyup.enter="scanUrl($event)" />
+
       <ul class="scrapes-list">
-        <li v-for="scrape in scrapes"
+        <li v-for="scrape in scans"
           class="scrape"
           :key="scrape.id">
           <div class="view">
-            <label>{{scrape.source}} {{scrape.state}}</label>
+            <span>Scan: {{scrape.source}}</span>
+            <label>{{scrape.status}}</label>
+            <p></p>
           </div>
         </li>
       </ul>
@@ -17,7 +20,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapState, mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'ScrapeForm',
@@ -31,9 +34,7 @@ export default {
   },
   computed: {
     ...mapState('scrape', ['scrapes']),
-    scans () {
-      return this.$store.getters.scans
-    }
+    ...mapGetters('scrape', ['scans'])
   },
   methods: {
     ...mapMutations('scrape', ['setUrl']),
