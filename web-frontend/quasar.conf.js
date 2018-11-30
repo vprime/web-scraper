@@ -31,6 +31,12 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /node_modules/
         })
+      },
+      env: ctx.dev ? {
+        API: JSON.stringify('http://localhost:5000')
+      }
+      : {
+        API: JSON.stringify('')
       }
     },
     devServer: {
