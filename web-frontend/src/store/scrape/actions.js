@@ -1,8 +1,9 @@
 import axios from 'axios'
 
 export const scrape = ({ commit, state }) => {
+  console.log(process.env.API)
   axios
-    .post('http://localhost:5000/scrape', {
+    .post(process.env.API + '/scrape', {
       address: state.url
     })
     .catch(error => {
