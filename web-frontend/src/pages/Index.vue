@@ -1,12 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <div>
-      <ScrapeForm></ScrapeForm>
-    </div>
-    <div>
-      <ScrapeList></ScrapeList>
-    </div>
-    <img alt="Quasar logo" src="~assets/quasar-logo-full.svg">
+    <ScrapeList />
   </q-page>
 </template>
 
@@ -14,10 +8,9 @@
 </style>
 
 <script>
-import ScrapeForm from '../components/scrape-form'
 import ScrapeList from '../components/scrape-list'
 export default {
   name: 'PageIndex',
-  components: {ScrapeForm, ScrapeList}
+  components: {ScrapeList}
 }
 </script>

@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div>Scrape a Page</div>
-    <section class="main">
-      <input v-model="url" placeholder="Scrape Url" v-on:keyup.enter="scanUrl($event)" />
-    </section>
-  </div>
+  <form>
+    <label>Scrape a Page</label>
+    : <input v-model="url" placeholder="Scrape Url" v-on:keyup.enter="scanUrl($event)" />
+  </form>
 </template>
 
 <script>

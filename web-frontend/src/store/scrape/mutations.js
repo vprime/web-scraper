@@ -14,6 +14,9 @@ export const clearScans = (state) => {
 }
 
 export const setUrl = (state, url) => {
+  if (!url.match(/^[a-zA-Z]+:\/\//)) {
+    url = 'http://' + url
+  }
   state.url = url
 }
 

@@ -4,12 +4,12 @@
       class="scrape"
       :key="scrape.id">
       <div class="view">
-        <span>Scan: {{scrape.source}}</span>
-        <label>{{scrape.status}}</label>
+        <span>Scan: {{scrape.source}} status: {{scrape.status}}</span>
+
         <p>
           <ul>
             <li v-for="address in scrape.detections" :key="address.id">
-              <ScrapedURL :address=address :source=scrape.source></ScrapedURL>
+              <ScrapedURL :address=address></ScrapedURL>
             </li>
           </ul>
         </p>
