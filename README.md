@@ -1,6 +1,6 @@
 # web-scraper
 Basic URL scraper built in Flask with a Quasar frontend
-
+![screenshot](https://raw.githubusercontent.com/vprime/web-scraper/master/screenshot.jpg)
 
 # Installation & Executing
 1. Install Python 3, pip
